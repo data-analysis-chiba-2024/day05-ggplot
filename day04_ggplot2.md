@@ -289,19 +289,15 @@ ggplot(
 
 ![](day04_ggplot2_files/figure-commonmark/unnamed-chunk-14-1.png)
 
-## Modifying text
+## Modifying labels
 
 To clean this figure up for a publication we need to change some of the
-text elements. The x-axis is too cluttered, and the y axis should read
-“Life expectancy”, rather than the column name in the data frame.
+labels. The y axis should read “Life expectancy”, rather than the column
+name in the data frame. It’s also a good idea to indicate the units of
+the data (years for life expectancy).
 
-We can do this by adding a couple of different layers. The **theme**
-layer controls the axis text, and overall text size. Labels for the
-axes, plot title and any legend can be set using the `labs` function.
-Legend titles are set using the same names we used in the `aes`
-specification. Thus below the color legend title is set using
-`color = "Continent"`, while the title of a fill legend would be set
-using `fill = "MyTitle"`.
+You can change these using the `labs()` function. You set the value of
+each label as a character string (for example, `x = "Year"`, etc.):
 
 ``` r
 ggplot(
@@ -313,7 +309,7 @@ ggplot(
   facet_wrap(vars(country)) +
   labs(
     x = "Year",              # x axis title
-    y = "Life expectancy",   # y axis title
+    y = "Life expectancy (years)",   # y axis title
     title = "Figure 1",       # main title of figure
     subtitle = "Life expectancy of selected countries in Asia over time"
   )
@@ -336,7 +332,7 @@ gapminder_asia_plot <- ggplot(
   facet_wrap(vars(country)) +
   labs(
     x = "Year",
-    y = "Life expectancy",
+    y = "Life expectancy (years)",
     title = "Figure 1",
     subtitle = "Life expectancy of selected countries in Asia over time"
   )
@@ -385,7 +381,7 @@ be submitted.
 Finally, go to Moodle and submit your assignment there by clicking
 “提出物をアッ プロード・入力する” and entering the URL of your repo. For
 this assignment, mine looks like this:
-`https://github.com/data-analysis-chiba-2023/day05-ggplot2-joelnitta`
+`https://github.com/data-analysis-chiba-2023/day05-ggplot-joelnitta`
 
 Be sure to do this BY THE DEADLINE, or your work will not be counted.
 
