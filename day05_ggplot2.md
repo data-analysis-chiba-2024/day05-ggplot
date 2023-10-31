@@ -21,6 +21,11 @@ Today we’ll be learning about the ggplot2 package, because it has a
 consistent syntax and can be used to produce publication-quality
 graphics.
 
+We do not have time to cover nearly everything there is to know about
+ggplot2. For more information, I highly recommend the book written by
+the author of ggplot2, Hadley Wickham: [ggplot2: Elegant Graphics for
+Data Analysis](https://ggplot2-book.org/).
+
 ggplot2 is built on the grammar of graphics, the idea that any plot can
 be built from the same set of components: a **data set**, **mapping
 aesthetics**, and graphical **layers**:
