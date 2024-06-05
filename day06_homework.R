@@ -1,4 +1,4 @@
-# DAY 5 HOMEWORK
+# DAY 6 HOMEWORK
 #
 # Name:
 #
