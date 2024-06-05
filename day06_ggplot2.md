@@ -1,4 +1,5 @@
-# Reproducible Data Analysis Day 5: Data visualization with ggplot2
+# Reproducible Data Analysis Day 6: Data visualization with ggplot2
+
 
 ### Learning Objectives
 
@@ -66,11 +67,11 @@ library(tidyverse)
 ```
 
     ── Attaching core tidyverse packages ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── tidyverse 2.0.0 ──
-    ✔ dplyr     1.1.2     ✔ readr     2.1.4
-    ✔ forcats   1.0.0     ✔ stringr   1.5.0
-    ✔ ggplot2   3.4.2     ✔ tibble    3.2.1
-    ✔ lubridate 1.9.2     ✔ tidyr     1.3.0
-    ✔ purrr     1.0.1     
+    ✔ dplyr     1.1.4     ✔ readr     2.1.5
+    ✔ forcats   1.0.0     ✔ stringr   1.5.1
+    ✔ ggplot2   3.5.1     ✔ tibble    3.2.1
+    ✔ lubridate 1.9.3     ✔ tidyr     1.3.1
+    ✔ purrr     1.0.2     
     ── Conflicts ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── tidyverse_conflicts() ──
     ✖ dplyr::filter() masks stats::filter()
     ✖ dplyr::lag()    masks stats::lag()
@@ -120,7 +121,7 @@ on the plot.
 ggplot(data = gapminder)
 ```
 
-![](day05_ggplot2_files/figure-commonmark/unnamed-chunk-4-1.png)
+![](day06_ggplot2_files/figure-commonmark/unnamed-chunk-4-1.png)
 
 Here we called `ggplot` and told it what data we want to show on our
 figure. This is not enough information for `ggplot` to actually draw
@@ -136,7 +137,7 @@ should be used for the **x** and **y** locations.
 ggplot(data = gapminder, mapping = aes(x = gdpPercap, y = lifeExp))
 ```
 
-![](day05_ggplot2_files/figure-commonmark/unnamed-chunk-5-1.png)
+![](day06_ggplot2_files/figure-commonmark/unnamed-chunk-5-1.png)
 
 Here we told `ggplot` we want to plot the “gdpPercap” column of the
 gapminder data frame on the x-axis, and the “lifeExp” column on the
@@ -153,7 +154,7 @@ ggplot(data = gapminder, mapping = aes(x = gdpPercap, y = lifeExp)) +
   geom_point()
 ```
 
-![](day05_ggplot2_files/figure-commonmark/unnamed-chunk-6-1.png)
+![](day06_ggplot2_files/figure-commonmark/unnamed-chunk-6-1.png)
 
 Here we used `geom_point`, which tells `ggplot` we want to visually
 represent the relationship between **x** and **y** as a scatterplot of
@@ -169,7 +170,7 @@ ggplot(data = gapminder, mapping = aes(x=year, y=lifeExp, color=continent)) +
   geom_line()
 ```
 
-![](day05_ggplot2_files/figure-commonmark/unnamed-chunk-7-1.png)
+![](day06_ggplot2_files/figure-commonmark/unnamed-chunk-7-1.png)
 
 Instead of adding a `geom_point` layer, we’ve added a `geom_line` layer.
 
@@ -182,7 +183,7 @@ ggplot(data = gapminder, mapping = aes(x=year, y=lifeExp, group=country, color=c
   geom_line()
 ```
 
-![](day05_ggplot2_files/figure-commonmark/unnamed-chunk-8-1.png)
+![](day06_ggplot2_files/figure-commonmark/unnamed-chunk-8-1.png)
 
 We’ve added the **group** *aesthetic*, which tells `ggplot` to draw a
 line for each country.
@@ -195,7 +196,7 @@ ggplot(data = gapminder, mapping = aes(x=year, y=lifeExp, group=country, color=c
   geom_line() + geom_point()
 ```
 
-![](day05_ggplot2_files/figure-commonmark/unnamed-chunk-9-1.png)
+![](day06_ggplot2_files/figure-commonmark/unnamed-chunk-9-1.png)
 
 It’s important to note that each layer is drawn on top of the previous
 layer. In this example, the points have been drawn *on top of* the
@@ -206,7 +207,7 @@ ggplot(data = gapminder, mapping = aes(x=year, y=lifeExp, group=country)) +
   geom_line(mapping = aes(color=continent)) + geom_point()
 ```
 
-![](day05_ggplot2_files/figure-commonmark/unnamed-chunk-10-1.png)
+![](day06_ggplot2_files/figure-commonmark/unnamed-chunk-10-1.png)
 
 In this example, the *aesthetic* mapping of **color** has been moved
 from the global plot options in `ggplot` to the `geom_line` layer so it
@@ -241,7 +242,7 @@ ggplot(data = gapminder, mapping = aes(x = gdpPercap, y = lifeExp)) +
   scale_x_log10()
 ```
 
-![](day05_ggplot2_files/figure-commonmark/unnamed-chunk-11-1.png)
+![](day06_ggplot2_files/figure-commonmark/unnamed-chunk-11-1.png)
 
 The `scale_x_log10` function applied a transformation to the coordinate
 system of the plot, so that each multiple of 10 is evenly spaced from
@@ -260,7 +261,7 @@ ggplot(data = gapminder, mapping = aes(x = gdpPercap, y = lifeExp)) +
   scale_x_log10(labels = label_comma())
 ```
 
-![](day05_ggplot2_files/figure-commonmark/unnamed-chunk-12-1.png)
+![](day06_ggplot2_files/figure-commonmark/unnamed-chunk-12-1.png)
 
 ## Multi-panel figures
 
@@ -292,7 +293,7 @@ ggplot(
   facet_wrap(vars(country))
 ```
 
-![](day05_ggplot2_files/figure-commonmark/unnamed-chunk-14-1.png)
+![](day06_ggplot2_files/figure-commonmark/unnamed-chunk-14-1.png)
 
 ## Modifying labels
 
@@ -320,7 +321,7 @@ ggplot(
   )
 ```
 
-![](day05_ggplot2_files/figure-commonmark/unnamed-chunk-15-1.png)
+![](day06_ggplot2_files/figure-commonmark/unnamed-chunk-15-1.png)
 
 ## Exporting the plot
 
@@ -373,12 +374,12 @@ ggsave(plot = gapminder_asia_plot, file = "results/gapminder_asia.pdf")
 
 ## Submitting the homework
 
-Go to Moodle, click on the Day 5 Homework assignment, and click on the
+Go to Moodle, click on the Day 6 Homework assignment, and click on the
 link to accept the assignment. This will create the repo in your GitHub
 account.
 
 Next, clone the remote repo to your local machine. Then, edit the file
-`day_05_homework.R` file in RStudio. Make sure that your code runs
+`day_06_homework.R` file in RStudio. Make sure that your code runs
 without errors. Once you have done so, commit your changes and push to
 the remote. Don’t forget to push! If you don’t push, your work will not
 be submitted.
@@ -386,7 +387,7 @@ be submitted.
 Finally, go to Moodle and submit your assignment there by clicking
 “提出物をアッ プロード・入力する” and entering the URL of your repo. For
 this assignment, mine looks like this:
-`https://github.com/data-analysis-chiba-2023/day05-ggplot-joelnitta`
+`https://github.com/data-analysis-chiba-2023/day06-ggplot-joelnitta`
 
 Be sure to do this BY THE DEADLINE, or your work will not be counted.
 

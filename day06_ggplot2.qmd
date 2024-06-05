@@ -1,5 +1,5 @@
 ---
-title: "Reproducible Data Analysis Day 5: Data visualization with ggplot2"
+title: "Reproducible Data Analysis Day 6: Data visualization with ggplot2"
 format: gfm
 ---
 
@@ -299,18 +299,18 @@ ggsave(plot = gapminder_asia_plot, file = "results/gapminder_asia.pdf")
 
 ## Submitting the homework
 
-Go to Moodle, click on the Day 5 Homework assignment, and click on the link to
+Go to Moodle, click on the Day 6 Homework assignment, and click on the link to
 accept the assignment. This will create the repo in your GitHub account.
 
 Next, clone the remote repo to your local machine. Then, edit the file
-`day_05_homework.R` file in RStudio. Make sure that your code runs without
+`day_06_homework.R` file in RStudio. Make sure that your code runs without
 errors. Once you have done so, commit your changes and push to the remote. Don't
 forget to push! If you don't push, your work will not be submitted.
 
 Finally, go to Moodle and submit your assignment there by clicking "提出物をアッ
 プロード・入力する" and entering the URL of your repo. For this assignment, mine
 looks like this:
-`https://github.com/data-analysis-chiba-2023/day05-ggplot-joelnitta`
+`https://github.com/data-analysis-chiba-2023/day06-ggplot-joelnitta`
 
 Be sure to do this BY THE DEADLINE, or your work will not be counted.
 
